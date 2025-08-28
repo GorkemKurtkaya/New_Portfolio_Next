@@ -1,0 +1,181 @@
+/* Projects overlay yardımcıları */
+.projects-overlay {
+  display: none;
+}
+.group:hover .projects-overlay {
+  display: grid;
+}
+@import "tailwindcss";
+
+:root {
+  --bg-main: #ffffff;
+  --bg-alt: #f7f8fa;
+  --text: #0f1724;
+  --accent: #06b6d4;
+}
+[data-theme="dark"] {
+  --bg-main: #0f1724;
+  --bg-alt: #0b1220;
+  --text: #e6eef6;
+  --accent: #06b6d4;
+}
+
+html, body {
+  background: radial-gradient(120% 80% at 80% 0%, rgba(6,182,212,0.10) 0%, rgba(6,182,212,0.06) 30%, rgba(6,182,212,0.03) 55%, transparent 70%),
+              linear-gradient(180deg, #ffffff 0%, #fcfdff 40%, #f9fbff 100%);
+  color: var(--text);
+  scroll-behavior: smooth;
+}
+
+/* Koyu tema: arka plan ve section zeminleri */
+[data-theme="dark"] html, [data-theme="dark"] body {
+  background: var(--bg-main);
+}
+[data-theme="dark"] .section-main {
+  background: var(--bg-main);
+}
+[data-theme="dark"] .section-alt {
+  background: var(--bg-alt);
+}
+
+/* Section arka plan yardımcı sınıfları */
+.section-main {
+  background: transparent;
+}
+.section-alt {
+  background: rgba(255,255,255,0.65);
+}
+
+/* Açık temada bölüm bazlı mavi aura/gradient */
+.section-gradient {
+  background: radial-gradient(120% 80% at 80% 0%, rgba(6,182,212,0.10) 0%, rgba(6,182,212,0.06) 30%, rgba(6,182,212,0.03) 55%, transparent 70%),
+              linear-gradient(180deg, #ffffff 0%, #fcfdff 40%, #f9fbff 100%);
+}
+
+/* Hero görseli için basit ışık/gölge efektleri */
+.photo-frame {
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.1);
+  background: radial-gradient(120% 120% at 80% 0%, rgba(6,182,212,0.20) 0%, rgba(6,182,212,0.06) 40%, transparent 60%), var(--bg-alt);
+}
+
+/* Accent glow: foto alanı için belirgin camgöbeği parıltı */
+.accent-glow {
+  box-shadow: 0 0 0 0 var(--accent), 0 36px 72px rgba(6,182,212,0.35), 0 12px 24px rgba(6,182,212,0.25);
+}
+
+/* Tipografi yardımcıları */
+.heading-xl {
+  font-size: clamp(32px, 5vw, 56px);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+.muted {
+  opacity: 0.8;
+}
+
+/* Sosyal ikon linkleri */
+.icon-link {
+  color: var(--text);
+  background: rgba(6,182,212,0.10);
+  transition: transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease, color 200ms ease;
+}
+.icon-link:hover {
+  color: var(--bg-main);
+  background: var(--accent);
+  transform: translateY(-2px) scale(1.06);
+  box-shadow: 0 10px 24px rgba(6,182,212,0.28);
+}
+
+/* Navbar link hover */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 999px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 200ms ease;
+}
+.nav-link:hover::after { transform: scaleX(1); }
+.nav-link:hover { text-shadow: 0 2px 14px rgba(6,182,212,0.35); }
+
+/* Marka linki hover */
+.brand-link {
+  transition: transform 200ms ease, text-shadow 200ms ease;
+}
+.brand-link:hover {
+  transform: translateY(-1px);
+  text-shadow: 0 6px 28px rgba(6,182,212,0.45);
+}
+
+/* Basit açılır/kapanır geçiş (mobil menü) */
+.collapse {
+  overflow: hidden;
+  transition: max-height 250ms ease;
+}
+.collapse-open { max-height: 500px; }
+.collapse-closed { max-height: 0px; }
+
+/* Mobil navbar görünürlüğü ve katmanlama */
+.nav-mobile {
+  position: relative;
+  z-index: 60;
+  background: var(--bg-main);
+  color: var(--text);
+}
+
+/* CTA butonlar için hover yardımcı sınıfı */
+.btn-hover {
+  transition: transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease, color 200ms ease, border-color 200ms ease;
+}
+.btn-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(6,182,212,0.25);
+}
+
+/* Accent gölgeli kartlar (Services için) */
+.card-accent {
+  background: var(--bg-main);
+  border: 1px solid rgba(6,182,212,0.18);
+  box-shadow: 0 8px 28px rgba(6,182,212,0.14), 0 1px 0 rgba(255,255,255,0.06) inset;
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease, background-color 220ms ease;
+}
+.card-accent:hover {
+  transform: translateY(-6px);
+  border-color: rgba(6,182,212,0.38);
+  box-shadow: 0 26px 72px rgba(6,182,212,0.32), 0 10px 24px rgba(6,182,212,0.22);
+}
+
+/* Kart arka planında accent tınısı */
+.card-accent-bg {
+  background:
+    radial-gradient(120% 90% at 85% 0%, rgba(6,182,212,0.10) 0%, rgba(6,182,212,0.06) 40%, transparent 65%),
+    var(--bg-main);
+}
+[data-theme="dark"] .card-accent-bg {
+  background:
+    radial-gradient(120% 90% at 85% 0%, rgba(6,182,212,0.18) 0%, rgba(6,182,212,0.10) 40%, transparent 70%),
+    var(--bg-main);
+}
+
+/* Project card stili */
+.project-card {
+  background: var(--bg-main);
+  border: 1px solid rgba(6,182,212,0.18);
+  box-shadow: 0 10px 30px rgba(6,182,212,0.12);
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(6,182,212,0.36);
+  box-shadow: 0 28px 76px rgba(6,182,212,0.30);
+}
