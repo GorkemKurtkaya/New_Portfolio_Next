@@ -6,14 +6,14 @@ export default function HomeSection() {
     <section id="home" className="section-main section-gradient">
       <div className="mx-auto max-w-6xl px-4 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
         <div>
-          <h1 className="heading-xl font-bold">
+          <h1 className="text-7xl font-bold">
             <span >Hi, I'm </span>
             <span style={{ color: "var(--accent)" }}>Görkem</span> Kurtkaya
-            <div className="text-2xl md:text-3xl mt-3 font-medium">
+            <div className="text-5xl md:text-3xl mt-3 font-lar">
               I'm a <span style={{ color: "var(--accent)" }}>Software Developer</span>
             </div>
           </h1>
-          <p className="mt-6 leading-relaxed">
+          <p className="mt-6 leading-relaxed text-lg">
             I'm Görkem, a developer focusing on modern web technologies (React/Next.js)
             and backend development (Node.js). I care about performance, UX and clean
             code, and I enjoy building maintainable, high‑quality products.

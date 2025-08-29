@@ -29,7 +29,7 @@ function ThemeToggle() {
     <button
       onClick={toggle}
       aria-label="Toggle theme"
-      className="relative inline-flex h-9 w-16 items-center rounded-full border"
+      className="relative inline-flex h-9 w-16 items-center rounded-full border cursor-pointer p-1"
       style={{
         backgroundColor: "var(--bg-alt)",
         borderColor: "rgba(0,0,0,0.08)",
@@ -96,7 +96,7 @@ export default function Navbar() {
             <ThemeToggle />
             <Link
               href="/#contact"
-              className="rounded-md px-4 py-2 font-medium shadow-sm transition"
+              className="rounded-md px-4 py-2 font-medium shadow-sm transition hover:opacity-80 "
               style={{
                 backgroundColor: "var(--accent)",
                 color: "var(--bg-main)",
