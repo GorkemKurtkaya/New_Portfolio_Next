@@ -2,11 +2,26 @@ import projects from "../../../components/projectsData";
 import { notFound } from "next/navigation";
 import { LeftOutlined } from "@ant-design/icons";
 import ProjectCarousel from "../../../components/ProjectCarousel";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import { promises as fs } from "fs";
+import path from "path";
+import rehypeRaw from "rehype-raw";
 
 export default async function ProjectDetailPage({ params }) {
   const { slug } = await params;
   const project = projects.find((p) => p.slug === slug);
   if (!project) return notFound();
+
+  let longdescContent = project.longdesc || "";
+  if (!longdescContent && project.longdescPath) {
+    try {
+      const filePath = path.join(process.cwd(), "public", project.longdescPath.replace(/^\//, ""));
+      longdescContent = await fs.readFile(filePath, "utf8");
+    } catch (err) {
+      longdescContent = "";
+    }
+  }
 
   return (
     <main className="section-main">
@@ -21,13 +36,8 @@ export default async function ProjectDetailPage({ params }) {
         <div className="grid gap-6 md:gap-8 lg:grid-cols-3 items-start">
           <div className="lg:col-span-2 order-1">
             <ProjectCarousel images={project.screenshots} />
-            <article className="mt-4 sm:mt-6 leading-relaxed max-w-prose">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold">{project.title}</h1>
-              {project.longdesc && (
-                <pre className="mt-4 sm:mt-6 whitespace-pre-wrap text-sm md:text-base" style={{ background: "rgba(6,182,212,0.06)", padding: 16, borderRadius: 12 }}>
-                  {project.longdesc}
-                </pre>
-              )}
+            <article className="mt-4 sm:mt-6 leading-relaxed max-w-none">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold ">{project.title}</h1>
 
             </article>
           </div>
@@ -44,6 +54,7 @@ export default async function ProjectDetailPage({ params }) {
             <div className="mt-5 sm:mt-6 px-0 sm:px-2">
               <a
                 href={project.code}
+                target="_blank"
                 className="btn-hover block w-full rounded-lg px-5 sm:px-6 py-3 sm:py-3.5 text-base sm:text-lg font-semibold text-center"
                 style={{ backgroundColor: "var(--accent)", color: "var(--bg-main)" }}
               >
@@ -52,6 +63,12 @@ export default async function ProjectDetailPage({ params }) {
             </div>
           </aside>
         </div>
+
+        {longdescContent && (
+          <div className="mt-10 prose prose-slate max-w-none">
+            <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>{longdescContent}</ReactMarkdown>
+          </div>
+        )}
       </div>
     </main>
   );

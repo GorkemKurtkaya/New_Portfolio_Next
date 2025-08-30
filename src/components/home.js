@@ -14,9 +14,12 @@ export default function HomeSection() {
             </div>
           </h1>
           <p className="mt-6 leading-relaxed text-lg">
-            I'm Görkem, a developer focusing on modern web technologies (React/Next.js)
-            and backend development (Node.js). I care about performance, UX and clean
-            code, and I enjoy building maintainable, high‑quality products.
+            I am a backend-focused software developer with strong fullstack experience. While my main
+            interest lies in building scalable backend systems using technologies such as NestJS, Node.js,
+            Redis, Kafka, RabbitMQ, and PostgreSQL, I have also developed fullstack projects with React,
+            Next.js, MongoDB, Supabase, Firebase, and Docker. Having worked on microservices, real-time
+            communication, and cloud-based deployments (GCP), I am eager to bring my knowledge and
+            passion to large-scale projects while continuously improving myself.
           </p>
 
           <div className="mt-6 flex flex-wrap items-center gap-3">
@@ -38,7 +41,7 @@ export default function HomeSection() {
         </div>
 
         <div
-          className="relative aspect-square w-full max-w-[440px] justify-self-center overflow-hidden rounded-full accent-glow"
+          className="relative aspect-square w-full max-w-[550px] justify-self-center overflow-hidden rounded-full accent-glow"
           style={{ background: "transparent" }}
         >
           <Image

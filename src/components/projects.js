@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import projects from "./projectsData";
+import Image from "next/image";
 
 export default function ProjectsSection() {
   const [showAll, setShowAll] = useState(false);
@@ -24,14 +25,28 @@ export default function ProjectsSection() {
         <div className="mt-10 grid gap-10 md:grid-cols-2 xl:grid-cols-3">
           {visible.map((p) => (
             <article key={p.id} className="project-card rounded-3xl overflow-hidden group">
-              <div className="relative aspect-[16/10] md:aspect-[16/9] bg-cover bg-center section-alt" style={{ backgroundImage: `url(${p.cover})` }}>
+              <div className="relative aspect-[16/10] md:aspect-[16/9] section-alt">
+                <Image
+                  src={p.cover}
+                  alt={`${p.title} cover`}
+                  fill
+                  className="object-contain object-center"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 400px"
+                  priority={false}
+                />
                 <div className="absolute inset-0 hidden md:group-hover:grid md:place-content-center bg-gradient-to-t from-[rgba(6,182,212,0.35)] to-transparent">
                   <a href={`/projects/${p.slug}`} className="btn-hover inline-block rounded-md px-4 py-2 font-medium" style={{ backgroundColor: "var(--accent)", color: "var(--bg-main)" }}>View details</a>
                 </div>
               </div>
               <div className="p-8">
-                <h3 className="text-3xl font-semibold">{p.title}</h3>
-                <p className="mt-3 muted text-lg">{p.summary}</p>
+                <h3 className="text-3xl font-semibold text-center">{p.title}</h3>
+                <p
+                  className="mt-3 muted text-lg"
+                  style={{ display: "-webkit-box", WebkitLineClamp: 4, WebkitBoxOrient: "vertical", overflow: "hidden" }}
+                  title={p.summary}
+                >
+                  {p.summary}
+                </p>
                 <div className="mt-3 flex flex-wrap gap-2">
                   {p.tags.map((t, i) => (
                     <span key={i} className="rounded-full px-3 py-1 text-xs" style={{ background: "rgba(6,182,212,0.12)", color: "var(--accent)" }}>{t}</span>

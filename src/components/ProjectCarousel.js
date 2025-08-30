@@ -9,12 +9,12 @@ export default function ProjectCarousel({ images }) {
       <Carousel autoplay dots>
         {images.map((src, i) => (
           <div key={i}>
-            <div className="relative w-full h-[160px] sm:h-[220px] md:h-[340px] lg:h-[420px] max-h-[60vh]">
+            <div className="relative w-full h-[160px] sm:h-[220px] md:h-[340px] lg:h-[420px] max-h-[60vh]" style={{ background: "var(--bg-alt)" }}>
               <Image
                 src={src}
                 alt={`Project screenshot ${i + 1}`}
                 fill
-                className="object-cover"
+                className="object-contain object-center"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 900px"
                 priority={i === 0}
               />
