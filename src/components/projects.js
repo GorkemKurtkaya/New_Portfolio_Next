@@ -41,7 +41,7 @@ export default function ProjectsSection() {
   
   return (
     <section id="projects" className="section-main section-gradient ">
-      <div className="mx-auto max-w-6xl px-4 py-16 md:py-24">
+      <div className="mx-auto max-w-6xl px-4 py-16 md:py-24" style={{ fontFamily: "var(--font-oswald)" }}>
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-center">{dict["projects.title"]}</h2>
         <div className="mt-10 grid gap-10 md:grid-cols-2 xl:grid-cols-3">
           {visible.map((p) => (

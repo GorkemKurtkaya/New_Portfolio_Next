@@ -122,6 +122,7 @@ function LanguageToggle() {
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [lang, setLang] = useState("en");
+  const [scrolled, setScrolled] = useState(false);
   const dict = lang === "tr" ? tr : en;
 
   useEffect(() => {
@@ -137,16 +138,26 @@ export default function Navbar() {
     document.addEventListener("langchange", handler);
     return () => document.removeEventListener("langchange", handler);
   }, []);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <nav
-      className="sticky top-0 z-50 relative"
+      className="fixed top-0 left-0 right-0 z-50"
       style={{
-        backgroundColor: "var(--bg-main)",
+        backgroundColor: scrolled ? "rgba(var(--bg-main-rgb), 0.72)" : "rgba(var(--bg-main-rgb), 1)",
         borderBottom: "1px solid rgba(0,0,0,0.06)",
         backdropFilter: "saturate(180%) blur(8px)",
+        transition: "background-color 200ms ease, backdrop-filter 200ms ease",
+        fontFamily: "var(--font-oswald)",
       }}
     >
-      <div className="mx-auto max-w-6xl px-4">
+      <div className="mx-auto max-w-6xl px-4 relative" >
         <div className="flex h-16 items-center justify-between">
           <Link href="/#home" className="brand-link font-semibold tracking-tight text-[1.5rem]">
             <span style={{ color: "var(--accent)" }}>Görkem</span>{" "}
@@ -191,13 +202,21 @@ export default function Navbar() {
             </Link>
           </div>
         </div>
-        <div className={`md:hidden border-t collapse nav-mobile absolute left-0 right-0 ${open ? "collapse-open" : "collapse-closed"}`} style={{ top: 64, borderColor: "rgba(0,0,0,0.06)" }}>
+        <div 
+          className={`md:hidden border-t nav-mobile absolute left-0 right-0 shadow-lg ${open ? "" : "hidden"}`} 
+          style={{ 
+            top: "100%", 
+            borderColor: "rgba(0,0,0,0.06)",
+            backgroundColor: "var(--bg-main)",
+            zIndex: 100
+          }}
+        >
           <div className="flex flex-col gap-1 py-3 text-lg">
-            <Link href="/#home" className="block px-4 py-2" style={{ color: "var(--text)" }} onClick={() => setOpen(false)}>{dict["nav.home"]}</Link>
-            <Link href="/#services" className="block px-4 py-2" style={{ color: "var(--text)" }} onClick={() => setOpen(false)}>{dict["nav.services"]}</Link>
-            <Link href="/#projects" className="block px-4 py-2" style={{ color: "var(--text)" }} onClick={() => setOpen(false)}>{dict["nav.projects"]}</Link>
-            <Link href="/#contact" className="block px-4 py-2" style={{ color: "var(--text)" }} onClick={() => setOpen(false)}>{dict["nav.contact"]}</Link>
-            <div className="flex items-center gap-3 px-1 pt-2">
+            <Link href="/#home" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800" style={{ color: "var(--text)" }} onClick={() => setOpen(false)}>{dict["nav.home"]}</Link>
+            <Link href="/#services" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800" style={{ color: "var(--text)" }} onClick={() => setOpen(false)}>{dict["nav.services"]}</Link>
+            <Link href="/#projects" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800" style={{ color: "var(--text)" }} onClick={() => setOpen(false)}>{dict["nav.projects"]}</Link>
+            <Link href="/#contact" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800" style={{ color: "var(--text)" }} onClick={() => setOpen(false)}>{dict["nav.contact"]}</Link>
+            <div className="flex items-center gap-3 px-4 pt-2 pb-1">
               <LanguageToggle />
               <ThemeToggle />
             </div>

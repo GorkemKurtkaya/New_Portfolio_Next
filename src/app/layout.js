@@ -1,16 +1,20 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Roboto, Oswald } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/navbar";
 import "antd/dist/reset.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+
+
+const roboto = Roboto({
+  variable: "--font-roboto",
   subsets: ["latin"],
+  weight: ["500", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const oswald = Oswald({
+  variable: "--font-oswald",
   subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "600", "700"]
 });
 
 export const metadata = {
@@ -22,7 +26,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={` ${oswald.className} ${oswald.variable} antialiased font-medium`}
       >
         <Navbar />
         {children}

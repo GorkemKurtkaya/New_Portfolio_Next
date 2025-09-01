@@ -62,7 +62,7 @@ export default function ContactSection() {
 
     return (
     <section id="contact" className="section-alt">
-        <div className="mx-auto max-w-6xl px-4 py-16 md:py-24">
+        <div className="mx-auto max-w-6xl px-4 py-16 md:py-24" style={{ fontFamily: "var(--font-oswald)" }}>
             <h2 className="text-3xl font-semibold">{dict["contact.title"]}</h2>
             {contextHolder}
             <form onSubmit={handleSubmit} className="mt-8 grid gap-4 md:grid-cols-2">

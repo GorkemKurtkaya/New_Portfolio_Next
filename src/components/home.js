@@ -26,16 +26,16 @@ export default function HomeSection() {
 
   return (
     <section id="home" className="section-main section-gradient">
-      <div className="mx-auto max-w-6xl px-4 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
+      <div className="mx-auto max-w-7xl px-4 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center" style={{ fontFamily: "var(--font-oswald)" }}>
         <div>
-          <h1 className="text-7xl font-bold">
-            <span>{dict["home.greeting"]} </span>
+          <h1 className="text-7xl font-bold" >
+            <span>{dict["home.greeting"]} <br /></span>
             <span style={{ color: "var(--accent)" }}>{dict["home.name"]}</span> {dict["home.surname"]}
             <div className="text-5xl md:text-3xl mt-3 font-lar">
               {dict["home.role"]} <span style={{ color: "var(--accent)" }}>{dict["home.role.title"]}</span>
             </div>
           </h1>
-          <p className="mt-6 leading-relaxed text-lg">
+          <p className="mt-6 leading-relaxed text-lg" style={{ fontFamily: "var(--font-roboto)", fontWeight: "400" }}>
             {dict["home.description"]}
           </p>
 
@@ -58,7 +58,7 @@ export default function HomeSection() {
         </div>
 
         <div
-          className="relative aspect-square w-full max-w-[550px] justify-self-center overflow-hidden rounded-full accent-glow"
+          className="relative aspect-square w-full max-w-[570px] justify-self-center overflow-hidden rounded-full accent-glow"
           style={{ background: "transparent" }}
         >
           <Image
