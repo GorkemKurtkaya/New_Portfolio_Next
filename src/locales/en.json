@@ -1,0 +1,45 @@
+{
+  "nav.home": "Home",
+  "nav.services": "Services",
+  "nav.projects": "Projects",
+  "cta.contactMe": "Contact me",
+
+  "contact.title": "Contact",
+  "contact.form.name": "Full name",
+  "contact.form.email": "Email",
+  "contact.form.subject": "Subject",
+  "contact.form.message": "Message",
+  "contact.form.submit": "Send",
+  "contact.form.sending": "Sending...",
+  "contact.success.title": "Success",
+  "contact.success.message": "Message sent successfully.",
+  "contact.error.title": "Error",
+  "contact.error.message": "An error occurred. Please try again later.",
+
+  "home.greeting": "Hi, I'm",
+  "home.name": "Görkem",
+  "home.surname": "Kurtkaya",
+  "home.role": "I'm a",
+  "home.role.title": "Software Developer",
+  "home.description": "I am a backend-focused software developer with strong fullstack experience. While my main interest lies in building scalable backend systems using technologies such as NestJS, Node.js, Redis, Kafka, RabbitMQ, and PostgreSQL, I have also developed fullstack projects with React, Next.js, MongoDB, Supabase, Firebase, and Docker. Having worked on microservices, real-time communication, and cloud-based deployments (GCP), I am eager to bring my knowledge and passion to large-scale projects while continuously improving myself.",
+  "home.cta.contact": "Contact me",
+  "home.cta.download": "Download CV",
+
+  "services.title": "Services",
+  "services.frontend.title": "Frontend Development",
+  "services.frontend.description": "I have experience in frontend development with React.js, creating dynamic and responsive user interfaces. I'm skilled in HTML5, CSS3, and JavaScript (TypeScript), ensuring compatibility across devices and browsers. I've worked with state management tools like Redux and React Context and integrated APIs for efficient data handling. My focus is on building clean, maintainable, and user-friendly interfaces that boost application performance.",
+  "services.backend.title": "Backend Development",
+  "services.backend.description": "I specialize in backend development, using technologies like Node.js, Django, and Express to build robust and scalable applications. I have experience in designing RESTful APIs, managing databases such as MongoDB and PostgreSQL, and implementing caching and message queues with Redis and Kafka. My focus is on creating high-performance, secure, and maintainable systems that integrate seamlessly with frontend components and scale efficiently with user growth.",
+
+  "projects.title": "Projects",
+  "projects.viewDetails": "View details",
+  "projects.showMore": "Show more",
+  "projects.showLess": "Show less",
+
+  "projectDetail.back": "Back",
+  "projectDetail.summary": "Summary",
+  "projectDetail.technologies": "Technologies",
+  "projectDetail.detailedCode": "Detailed Code",
+
+  "footer.copyright": "© {year} Görkem Kurtkaya — Developed by."
+}

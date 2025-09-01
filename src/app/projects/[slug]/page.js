@@ -1,26 +1,72 @@
-import projects from "../../../components/projectsData";
+"use client";
+
+import { useState, useEffect } from "react";
+import enProjects from "../../../components/enData";
+import trProjects from "../../../components/trData";
 import { notFound } from "next/navigation";
 import { LeftOutlined } from "@ant-design/icons";
 import ProjectCarousel from "../../../components/ProjectCarousel";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { promises as fs } from "fs";
-import path from "path";
 import rehypeRaw from "rehype-raw";
+import en from "../../../locales/en.json";
+import tr from "../../../locales/tr.json";
 
-export default async function ProjectDetailPage({ params }) {
-  const { slug } = await params;
-  const project = projects.find((p) => p.slug === slug);
-  if (!project) return notFound();
+export default function ProjectDetailPage({ params }) {
+  const [project, setProject] = useState(null);
+  const [longdescContent, setLongdescContent] = useState("");
+  const [lang, setLang] = useState("en");
+  const dict = lang === "tr" ? tr : en;
+  const projects = lang === "tr" ? trProjects : enProjects;
 
-  let longdescContent = project.longdesc || "";
-  if (!longdescContent && project.longdescPath) {
+  useEffect(() => {
     try {
-      const filePath = path.join(process.cwd(), "public", project.longdescPath.replace(/^\//, ""));
-      longdescContent = await fs.readFile(filePath, "utf8");
-    } catch (err) {
-      longdescContent = "";
-    }
+      const initial = document.documentElement.getAttribute("data-lang") || window.localStorage.getItem("lang") || "en";
+      setLang(initial);
+    } catch {}
+    const handler = (e) => {
+      try {
+        setLang(e.detail?.lang || "en");
+      } catch {}
+    };
+    document.addEventListener("langchange", handler);
+    return () => document.removeEventListener("langchange", handler);
+  }, []);
+
+  useEffect(() => {
+    const loadProject = async () => {
+      const { slug } = params;
+      const currentProjects = lang === "tr" ? trProjects : enProjects;
+      const foundProject = currentProjects.find((p) => p.slug === slug);
+      if (!foundProject) {
+        notFound();
+        return;
+      }
+      setProject(foundProject);
+
+      // Load markdown content via fetch instead of fs
+      if (foundProject.longdescPath) {
+        try {
+          const response = await fetch(foundProject.longdescPath);
+          if (response.ok) {
+            const content = await response.text();
+            setLongdescContent(content);
+          } else {
+            setLongdescContent(foundProject.longdesc || "");
+          }
+        } catch (err) {
+          setLongdescContent(foundProject.longdesc || "");
+        }
+      } else {
+        setLongdescContent(foundProject.longdesc || "");
+      }
+    };
+
+    loadProject();
+  }, [params, lang]);
+
+  if (!project) {
+    return null;
   }
 
   return (
@@ -29,7 +75,7 @@ export default async function ProjectDetailPage({ params }) {
         <div className="mb-6">
           <a href="/" className="inline-flex items-center gap-2 underline">
             <LeftOutlined />
-            Back
+            {dict["projectDetail.back"]}
           </a>
         </div>
 
@@ -38,14 +84,13 @@ export default async function ProjectDetailPage({ params }) {
             <ProjectCarousel images={project.screenshots} />
             <article className="mt-4 sm:mt-6 leading-relaxed max-w-none">
               <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold ">{project.title}</h1>
-
             </article>
           </div>
 
           <aside className="card-accent card-accent-bg rounded-2xl p-5 sm:p-6 order-0 lg:order-2">
-            <h2 className="text-lg sm:text-xl font-semibold">Summary</h2>
+            <h2 className="text-lg sm:text-xl font-semibold">{dict["projectDetail.summary"]}</h2>
             <p className="mt-2 muted">{project.summary}</p>
-            <h3 className="mt-4 sm:mt-6 font-semibold">Technologies</h3>
+            <h3 className="mt-4 sm:mt-6 font-semibold">{dict["projectDetail.technologies"]}</h3>
             <div className="mt-2 sm:mt-3 flex flex-wrap gap-2">
               {project.tags.map((t, i) => (
                 <span key={i} className="rounded-full px-3 py-1 text-xs" style={{ background: "rgba(6,182,212,0.12)", color: "var(--accent)" }}>{t}</span>
@@ -58,7 +103,7 @@ export default async function ProjectDetailPage({ params }) {
                 className="btn-hover block w-full rounded-lg px-5 sm:px-6 py-3 sm:py-3.5 text-base sm:text-lg font-semibold text-center"
                 style={{ backgroundColor: "var(--accent)", color: "var(--bg-main)" }}
               >
-                Detailed Code
+                {dict["projectDetail.detailedCode"]}
               </a>
             </div>
           </aside>

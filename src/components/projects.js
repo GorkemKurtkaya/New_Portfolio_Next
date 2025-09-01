@@ -1,11 +1,17 @@
 "use client";
 import { useEffect, useState } from "react";
-import projects from "./projectsData";
+import enProjects from "./enData";
+import trProjects from "./trData";
 import Image from "next/image";
+import en from "../locales/en.json";
+import tr from "../locales/tr.json";
 
 export default function ProjectsSection() {
   const [showAll, setShowAll] = useState(false);
   const [isMdUp, setIsMdUp] = useState(false);
+  const [lang, setLang] = useState("en");
+  const dict = lang === "tr" ? tr : en;
+  const projects = lang === "tr" ? trProjects : enProjects;
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -16,12 +22,27 @@ export default function ProjectsSection() {
     return () => mq.removeEventListener?.("change", update);
   }, []);
 
+  useEffect(() => {
+    try {
+      const initial = document.documentElement.getAttribute("data-lang") || window.localStorage.getItem("lang") || "en";
+      setLang(initial);
+    } catch {}
+    const handler = (e) => {
+      try {
+        setLang(e.detail?.lang || "en");
+      } catch {}
+    };
+    document.addEventListener("langchange", handler);
+    return () => document.removeEventListener("langchange", handler);
+  }, []);
+
   const baseCount = isMdUp ? 6 : 2;
   const visible = showAll ? projects : projects.slice(0, baseCount);
+  
   return (
     <section id="projects" className="section-main section-gradient ">
       <div className="mx-auto max-w-6xl px-4 py-16 md:py-24">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-center">Projects</h2>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-center">{dict["projects.title"]}</h2>
         <div className="mt-10 grid gap-10 md:grid-cols-2 xl:grid-cols-3">
           {visible.map((p) => (
             <article key={p.id} className="project-card rounded-3xl overflow-hidden group">
@@ -35,7 +56,7 @@ export default function ProjectsSection() {
                   priority={false}
                 />
                 <div className="absolute inset-0 hidden md:group-hover:grid md:place-content-center bg-gradient-to-t from-[rgba(6,182,212,0.35)] to-transparent">
-                  <a href={`/projects/${p.slug}`} className="btn-hover inline-block rounded-md px-4 py-2 font-medium" style={{ backgroundColor: "var(--accent)", color: "var(--bg-main)" }}>View details</a>
+                  <a href={`/projects/${p.slug}`} className="btn-hover inline-block rounded-md px-4 py-2 font-medium" style={{ backgroundColor: "var(--accent)", color: "var(--bg-main)" }}>{dict["projects.viewDetails"]}</a>
                 </div>
               </div>
               <div className="p-8">
@@ -54,7 +75,7 @@ export default function ProjectsSection() {
                 </div>
                 <div className="mt-4 md:hidden">
                   <a href={`/projects/${p.slug}`} className="btn-hover inline-block rounded-md px-4 py-2 font-medium" style={{ backgroundColor: "var(--accent)", color: "var(--bg-main)" }}>
-                    View details
+                    {dict["projects.viewDetails"]}
                   </a>
                 </div>
               </div>
@@ -63,7 +84,7 @@ export default function ProjectsSection() {
         </div>
         <div className="mt-10 text-center">
           <button onClick={() => setShowAll((v) => !v)} className="btn-hover inline-block rounded-md px-5 py-2.5 font-medium" style={{ backgroundColor: "var(--accent)", color: "var(--bg-main)" }}>
-            {showAll ? "Daha az göster" : "Tümüne göz at"}
+            {showAll ? dict["projects.showLess"] : dict["projects.showMore"]}
           </button>
         </div>
       </div>
