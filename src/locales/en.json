@@ -1,6 +1,7 @@
 {
   "nav.home": "Home",
   "nav.services": "Services",
+  "nav.stack": "Stack",
   "nav.projects": "Projects",
   "cta.contactMe": "Contact me",
 
@@ -24,6 +25,8 @@
   "home.description": "I am a backend-focused software developer with strong fullstack experience. While my main interest lies in building scalable backend systems using technologies such as NestJS, Node.js, Redis, Kafka, RabbitMQ, and PostgreSQL, I have also developed fullstack projects with React, Next.js, MongoDB, Supabase, Firebase, and Docker. Having worked on microservices, real-time communication, and cloud-based deployments (GCP), I am eager to bring my knowledge and passion to large-scale projects while continuously improving myself.",
   "home.cta.contact": "Contact me",
   "home.cta.download": "Download CV",
+
+  "stack.title": "Tech Stack",
 
   "services.title": "Services",
   "services.frontend.title": "Frontend Development",

@@ -29,7 +29,6 @@ html, body {
   scroll-behavior: smooth;
 }
 
-/* Koyu tema: arka plan ve section zeminleri */
 [data-theme="dark"] html, [data-theme="dark"] body {
   background: var(--bg-main);
 }
@@ -40,7 +39,6 @@ html, body {
   background: var(--bg-alt);
 }
 
-/* Section arka plan yardımcı sınıfları */
 .section-main {
   background: transparent;
 }
@@ -48,20 +46,17 @@ html, body {
   background: rgba(255,255,255,0.65);
 }
 
-/* Açık temada bölüm bazlı mavi aura/gradient */
 .section-gradient {
   background: radial-gradient(120% 80% at 80% 0%, rgba(6,182,212,0.10) 0%, rgba(6,182,212,0.06) 30%, rgba(6,182,212,0.03) 55%, transparent 70%),
               linear-gradient(180deg, #ffffff 0%, #fcfdff 40%, #f9fbff 100%);
 }
 
-/* Hero görseli için basit ışık/gölge efektleri */
 .photo-frame {
   border-radius: 16px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.1);
   background: radial-gradient(120% 120% at 80% 0%, rgba(6,182,212,0.20) 0%, rgba(6,182,212,0.06) 40%, transparent 60%), var(--bg-alt);
 }
 
-/* Accent glow: foto alanı için belirgin camgöbeği parıltı */
 .accent-glow {
   box-shadow: 0 0 0 0 var(--accent), 0 36px 72px rgba(6,182,212,0.35), 0 12px 24px rgba(6,182,212,0.25);
   transition: box-shadow 220ms ease, transform 220ms ease;
@@ -72,7 +67,6 @@ html, body {
   transform: translateY(-2px);
 }
 
-/* Tipografi yardımcıları */
 .heading-xl {
   font-size: clamp(32px, 5vw, 56px);
   line-height: 1.08;
@@ -82,7 +76,6 @@ html, body {
   opacity: 0.8;
 }
 
-/* Sosyal ikon linkleri */
 .icon-link {
   color: var(--text);
   background: rgba(6,182,212,0.10);
@@ -95,7 +88,6 @@ html, body {
   box-shadow: 0 10px 24px rgba(6,182,212,0.28);
 }
 
-/* Navbar link hover */
 .nav-link {
   position: relative;
 }
@@ -115,7 +107,6 @@ html, body {
 .nav-link:hover::after { transform: scaleX(1); }
 .nav-link:hover { text-shadow: 0 2px 14px rgba(6,182,212,0.35); }
 
-/* Marka linki hover */
 .brand-link {
   transition: transform 200ms ease, text-shadow 200ms ease;
 }
@@ -124,7 +115,6 @@ html, body {
   text-shadow: 0 6px 28px rgba(6,182,212,0.45);
 }
 
-/* Basit açılır/kapanır geçiş (mobil menü) */
 .collapse {
   overflow: hidden;
   transition: max-height 250ms ease;
@@ -132,14 +122,12 @@ html, body {
 .collapse-open { max-height: 500px; }
 .collapse-closed { max-height: 0px; }
 
-/* Mobil navbar görünürlüğü ve katmanlama */
 .nav-mobile {
   z-index: 60;
   background: var(--bg-main);
   color: var(--text);
 }
 
-/* CTA butonlar için hover yardımcı sınıfı */
 .btn-hover {
   transition: transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease, color 200ms ease, border-color 200ms ease;
 }
@@ -148,7 +136,6 @@ html, body {
   box-shadow: 0 12px 28px rgba(6,182,212,0.25);
 }
 
-/* Accent gölgeli kartlar (Services için) */
 .card-accent {
   background: var(--bg-main);
   border: 1px solid rgba(6,182,212,0.18);
@@ -161,7 +148,6 @@ html, body {
   box-shadow: 0 26px 72px rgba(6,182,212,0.32), 0 10px 24px rgba(6,182,212,0.22);
 }
 
-/* Kart arka planında accent tınısı */
 .card-accent-bg {
   background:
     radial-gradient(120% 90% at 85% 0%, rgba(6,182,212,0.10) 0%, rgba(6,182,212,0.06) 40%, transparent 65%),
@@ -173,7 +159,6 @@ html, body {
     var(--bg-main);
 }
 
-/* Project card stili */
 .project-card {
   background: var(--bg-main);
   border: 1px solid rgba(6,182,212,0.18);
@@ -186,3 +171,34 @@ html, body {
   border-color: rgba(6,182,212,0.36);
   box-shadow: 0 28px 76px rgba(6,182,212,0.30);
 }
+
+html[data-theme="light"] { scrollbar-width: thin; scrollbar-color: color-mix(in srgb, var(--accent, #06b6d4) 70%, transparent) #ffffff; }
+html[data-theme="light"] ::-webkit-scrollbar { width: 10px; height: 10px; }
+html[data-theme="light"] ::-webkit-scrollbar-track { background: #ffffff; }
+html[data-theme="light"] ::-webkit-scrollbar-thumb { background: color-mix(in srgb, var(--accent, #06b6d4) 70%, transparent); border-radius: 999px; border: 2px solid #ffffff; background-clip: padding-box; }
+html[data-theme="light"] ::-webkit-scrollbar-thumb:hover { background: color-mix(in srgb, var(--accent, #06b6d4) 90%, transparent); }
+html[data-theme="light"] ::-webkit-scrollbar-corner { background: #ffffff; }
+
+html[data-theme="dark"] { scrollbar-width: thin; scrollbar-color: color-mix(in srgb, var(--accent, #06b6d4) 70%, transparent) var(--bg-main); }
+html[data-theme="dark"] ::-webkit-scrollbar { width: 10px; height: 10px; }
+html[data-theme="dark"] ::-webkit-scrollbar-track { background: var(--bg-main); }
+html[data-theme="dark"] ::-webkit-scrollbar-thumb { background: color-mix(in srgb, var(--accent, #06b6d4) 70%, transparent); border-radius: 999px; border: 2px solid var(--bg-main); background-clip: padding-box; }
+html[data-theme="dark"] ::-webkit-scrollbar-thumb:hover { background: color-mix(in srgb, var(--accent, #06b6d4) 90%, transparent); }
+html[data-theme="dark"] ::-webkit-scrollbar-corner { background: var(--bg-main); }
+
+@keyframes stack-spin { to { transform: rotate(360deg); } }
+@keyframes stack-spin-rev { to { transform: rotate(-360deg); } }
+.stack-wheel { position: relative; width: min(100%, 1000px); height: var(--radius); margin: 0 auto; overflow: hidden; }
+.stack-orbit { position: relative; width: calc(var(--radius) * 2); height: calc(var(--radius) * 2); margin: 0 auto; border-radius: 999px; animation: stack-spin 40s linear infinite; animation-play-state: running; }
+.stack-item { position: absolute; top: 50%; left: 50%; transform: rotate(var(--angle)) translate(var(--radius)) rotate(calc(-1 * var(--angle))); transform-origin: 0 0; }
+.stack-badge { display: inline-flex; align-items: center; justify-content: center; width: 90px; height: 90px; border-radius: 999px; background: rgba(6,182,212,0.12); transition: transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease; }
+.stack-rotor { position: relative; display: inline-block; animation: stack-spin-rev 40s linear infinite; animation-play-state: running; }
+.stack-item:hover .stack-badge { transform: scale(1.2); box-shadow: 0 18px 40px rgba(6,182,212,0.34); background: rgba(6,182,212,0.18); }
+.stack-label { position: absolute; left: 50%; top: calc(100% + 6px); transform: translate(-50%, 4px); color: var(--text); font-size: 12px; opacity: 0; pointer-events: none; transition: opacity 160ms ease, transform 160ms ease; }
+.stack-item:hover .stack-label { opacity: 0.95; transform: translate(-50%, 0); }
+.stack-wheel:has(.stack-item:hover) .stack-orbit { animation-play-state: paused; }
+.stack-wheel:has(.stack-item:hover) .stack-rotor { animation-play-state: paused; }
+@media (min-width: 768px) { .stack-label { font-size: 14px; } }
+.stack-center { position: absolute; left: 50%; bottom: 0; transform: translate(-50%, 30%); color: var(--text); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+@media (min-width: 768px) { .stack-center { font-size: 22px; } }
+@media (max-width: 767px) { .stack-center { font-size: 16px; } }

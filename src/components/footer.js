@@ -25,7 +25,7 @@ export default function FooterSection() {
   }, []);
 
   return (
-    <footer className="section-main section-gradient" style={{ borderTop: "1px solid rgba(6,182,212,0.18)" }}>
+    <footer className="section-main section-alt">
       <div className="mx-auto max-w-6xl px-4 py-12 flex flex-col items-center gap-6" style={{ fontFamily: "var(--font-oswald)" }}>
         <div className="flex items-center gap-4">
           <a href="https://github.com/GorkemKurtkaya" target="_blank" rel="noreferrer" aria-label="GitHub" className="icon-link inline-flex h-11 w-11 items-center justify-center rounded-full">

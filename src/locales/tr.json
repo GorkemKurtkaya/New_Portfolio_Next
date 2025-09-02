@@ -1,6 +1,7 @@
 {
   "nav.home": "Anasayfa",
   "nav.services": "Hizmetler",
+  "nav.stack": "Teknolojiler",
   "nav.projects": "Projeler",
   "cta.contactMe": "İletişim",
 
@@ -24,6 +25,8 @@
   "home.description": "Güçlü fullstack deneyimine sahip backend odaklı bir yazılım geliştiricisiyim. Ana ilgi alanım NestJS, Node.js, Redis, Kafka, RabbitMQ ve PostgreSQL gibi teknolojiler kullanarak ölçeklenebilir backend sistemleri oluşturmak olsa da, React, Next.js, MongoDB, Supabase, Firebase ve Docker ile fullstack projeler de geliştirdim. Mikroservisler, gerçek zamanlı iletişim ve bulut tabanlı dağıtımlar (GCP) üzerinde çalışmış olarak, bilgimi ve tutkumu büyük ölçekli projelere getirmeye ve sürekli kendimi geliştirmeye hevesliyim.",
   "home.cta.contact": "Benimle İletişime Geç",
   "home.cta.download": "CV İndir",
+
+  "stack.title": "Teknolojilerim",
 
   "services.title": "Hizmetler",
   "services.frontend.title": "Frontend Geliştirme",

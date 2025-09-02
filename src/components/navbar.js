@@ -179,6 +179,7 @@ export default function Navbar() {
             <Link href="/#home" className="nav-link hover:opacity-80 text-[1.2rem]" style={{ color: "var(--text)" }}>
               {dict["nav.home"]}
             </Link>
+            <Link href="/#stack" className="nav-link hover:opacity-80 text-[1.2rem]" style={{ color: "var(--text)" }}>{dict["nav.stack"]}</Link>
             <Link href="/#services" className="nav-link hover:opacity-80 text-[1.2rem]" style={{ color: "var(--text)" }}>
               {dict["nav.services"]}
             </Link>

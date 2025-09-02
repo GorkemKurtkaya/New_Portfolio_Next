@@ -24,7 +24,7 @@ export default function ServicesSection() {
   }, []);
 
   return (
-    <section id="services" className="section-alt">
+    <section id="services" className="section-main section-gradient ">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 py-16 md:py-24" style={{ fontFamily: "var(--font-oswald)" }}>
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-center">{dict["services.title"]}</h2>
         <div className="mt-8 sm:mt-10 grid gap-8 sm:gap-10 md:gap-12 xl:gap-16 md:grid-cols-2">
