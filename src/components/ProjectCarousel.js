@@ -30,7 +30,7 @@ export default function ProjectCarousel({ images }) {
   return (
     <div className="rounded-2xl overflow-hidden project-card w-full">
       <AntImage.PreviewGroup preview={{ visible: previewOpen, onVisibleChange: setPreviewOpen, current, onChange: (i) => setCurrent(i) }}>
-        <Carousel autoplay dots>
+        <Carousel autoplay dots className="project-carousel">
           {images.map((src, i) => (
             <div key={i}>
               <div className="relative group w-full h-[160px] sm:h-[220px] md:h-[340px] lg:h-[420px] max-h-[60vh] cursor-pointer" style={{ background: "var(--bg-alt)" }} onClick={() => { setCurrent(i); setPreviewOpen(true); }}>

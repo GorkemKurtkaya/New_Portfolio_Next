@@ -12,7 +12,8 @@ function ThemeToggle() {
   useEffect(() => {
     try {
       const stored = window.localStorage.getItem("theme");
-      const initial = stored === "dark" ? "dark" : "light";
+      const attr = document.documentElement.getAttribute("data-theme");
+      const initial = stored ? (stored === "dark" ? "dark" : "light") : (attr || "dark");
       setTheme(initial);
       document.documentElement.setAttribute("data-theme", initial);
     } catch {}
