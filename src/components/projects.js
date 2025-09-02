@@ -56,7 +56,7 @@ export default function ProjectsSection() {
                   priority={false}
                 />
                 <div className="absolute inset-0 hidden md:group-hover:grid md:place-content-center bg-gradient-to-t from-[rgba(6,182,212,0.35)] to-transparent">
-                  <a href={`/projects/${p.slug}`} className="btn-hover inline-block rounded-md px-4 py-2 font-medium" style={{ backgroundColor: "var(--accent)", color: "var(--bg-main)" }}>{dict["projects.viewDetails"]}</a>
+                  <a href={`/projects/${p.id}`} className="btn-hover inline-block rounded-md px-4 py-2 font-medium" style={{ backgroundColor: "var(--accent)", color: "var(--bg-main)" }}>{dict["projects.viewDetails"]}</a>
                 </div>
               </div>
               <div className="p-8">
@@ -74,7 +74,7 @@ export default function ProjectsSection() {
                   ))}
                 </div>
                 <div className="mt-4 md:hidden">
-                  <a href={`/projects/${p.slug}`} className="btn-hover inline-block rounded-md px-4 py-2 font-medium" style={{ backgroundColor: "var(--accent)", color: "var(--bg-main)" }}>
+                  <a href={`/projects/${p.id}`} className="btn-hover inline-block rounded-md px-4 py-2 font-medium" style={{ backgroundColor: "var(--accent)", color: "var(--bg-main)" }}>
                     {dict["projects.viewDetails"]}
                   </a>
                 </div>

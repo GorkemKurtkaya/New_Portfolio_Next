@@ -188,16 +188,16 @@ html[data-theme="dark"] ::-webkit-scrollbar-corner { background: var(--bg-main);
 
 @keyframes stack-spin { to { transform: rotate(360deg); } }
 @keyframes stack-spin-rev { to { transform: rotate(-360deg); } }
-.stack-wheel { position: relative; width: min(100%, 1000px); height: var(--radius); margin: 0 auto; overflow: hidden; }
-.stack-orbit { position: relative; width: calc(var(--radius) * 2); height: calc(var(--radius) * 2); margin: 0 auto; border-radius: 999px; animation: stack-spin 40s linear infinite; animation-play-state: running; }
+.stack-wheel { position: relative; width: min(100%, 1000px); height: var(--radius); margin: 0 auto; overflow: hidden; display: grid; place-items: start center; contain: layout paint; }
+.stack-orbit { position: relative; width: calc(var(--radius) * 2); height: calc(var(--radius) * 2); margin: 0; border-radius: 999px; animation: stack-spin 40s linear infinite; animation-play-state: running; will-change: transform; }
 .stack-item { position: absolute; top: 50%; left: 50%; transform: rotate(var(--angle)) translate(var(--radius)) rotate(calc(-1 * var(--angle))); transform-origin: 0 0; }
 .stack-badge { display: inline-flex; align-items: center; justify-content: center; width: 90px; height: 90px; border-radius: 999px; background: rgba(6,182,212,0.12); transition: transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease; }
-.stack-rotor { position: relative; display: inline-block; animation: stack-spin-rev 40s linear infinite; animation-play-state: running; }
+.stack-rotor { position: relative; display: inline-block; animation: stack-spin-rev 40s linear infinite; animation-play-state: running; will-change: transform; }
 .stack-item:hover .stack-badge { transform: scale(1.2); box-shadow: 0 18px 40px rgba(6,182,212,0.34); background: rgba(6,182,212,0.18); }
 .stack-label { position: absolute; left: 50%; top: calc(100% + 6px); transform: translate(-50%, 4px); color: var(--text); font-size: 12px; opacity: 0; pointer-events: none; transition: opacity 160ms ease, transform 160ms ease; }
 .stack-item:hover .stack-label { opacity: 0.95; transform: translate(-50%, 0); }
-.stack-wheel:has(.stack-item:hover) .stack-orbit { animation-play-state: paused; }
-.stack-wheel:has(.stack-item:hover) .stack-rotor { animation-play-state: paused; }
+.stack-wheel:hover .stack-orbit { animation-play-state: paused; }
+.stack-wheel:hover .stack-rotor { animation-play-state: paused; }
 @media (min-width: 768px) { .stack-label { font-size: 14px; } }
 .stack-center { position: absolute; left: 50%; bottom: 0; transform: translate(-50%, 30%); color: var(--text); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
 @media (min-width: 768px) { .stack-center { font-size: 22px; } }
