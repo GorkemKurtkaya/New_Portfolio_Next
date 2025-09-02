@@ -53,7 +53,7 @@ export default function HomeSection() {
 
           <div className="mt-8 flex flex-wrap gap-4">
             <a href="#contact" className="btn-hover rounded-md px-4 py-2 font-medium shadow-sm" style={{ backgroundColor: "var(--accent)", color: "var(--bg-main)" }}>{dict["home.cta.contact"]}</a>
-            <a href="/Gorkem_Kurtkaya_CV.pdf" className="btn-hover rounded-md px-4 py-2 font-medium border" style={{ borderColor: "rgba(0,0,0,0.15)" }}>{dict["home.cta.download"]}</a>
+            <a href="/Gorkem_Kurtkaya_CV.pdf" target="_blank" rel="noopener noreferrer" className="btn-hover rounded-md px-4 py-2 font-medium border" style={{ borderColor: "rgba(0,0,0,0.15)" }}>{dict["home.cta.download"]}</a>
           </div>
         </div>
 
