@@ -83,9 +83,21 @@ const enProjects = [
       "/projects/burger/burgerss4.png"
     ],
     tags: [
-      "CI/CD",
-      "Testing",
-      "Docker"
+      "Node.js",
+      "Express.js",
+      "Supabase",
+      "PostgreSQL",
+      "JWT",
+      "Redis",
+      "Stripe API",
+      "Kafka",
+      "Socket.IO",
+      "Microservices",
+      "Next.js",
+      "Tailwind CSS",
+      "Ant Design",
+      "Context API",
+      "SSR"
     ],
     live: "#",
     code: "https://github.com/GorkemKurtkaya/BurgerShop-Fullstack"
