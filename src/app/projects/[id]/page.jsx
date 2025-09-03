@@ -73,47 +73,69 @@ export default function ProjectDetailPage() {
 
   return (
     <main className="section-main">
-      <div className="mx-auto max-w-6xl px-4 py-8 sm:py-10 md:py-16">
-        <div className="mb-6">
-          <a href="/" className="inline-flex items-center gap-2 underline">
-            <LeftOutlined />
+      <div className="mx-auto max-w-6xl px-3 sm:px-4 py-6 sm:py-8 md:py-12 lg:py-16">
+        {/* Geri dönüş linki */}
+        <div className="mb-4 sm:mb-6">
+          <a href="/" className="inline-flex items-center gap-1.5 sm:gap-2 underline text-sm sm:text-base">
+            <LeftOutlined className="text-xs sm:text-sm" />
             {dict["projectDetail.back"]}
           </a>
         </div>
 
-        <div className="grid gap-6 md:gap-8 lg:grid-cols-3 items-start">
-          <div className="lg:col-span-2 order-1">
-            <ProjectCarousel images={project.screenshots} />
-            <article className="mt-4 sm:mt-6 leading-relaxed max-w-none">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold ">{project.title}</h1>
-            </article>
-          </div>
-
-          <aside className="card-accent card-accent-bg rounded-2xl p-5 sm:p-6 order-0 lg:order-2">
-            <h2 className="text-lg sm:text-xl font-semibold">{dict["projectDetail.summary"]}</h2>
-            <p className="mt-2 muted">{project.summary}</p>
-            <h3 className="mt-4 sm:mt-6 font-semibold">{dict["projectDetail.technologies"]}</h3>
-            <div className="mt-2 sm:mt-3 flex flex-wrap gap-2">
+        {/* Ana grid layout - mobile-first responsive tasarım */}
+        <div className="flex flex-col gap-6 sm:gap-8 xl:grid xl:grid-cols-3 xl:gap-10">
+          
+          {/* Proje bilgileri kartı - mobilde üstte, navbar'dan uzak */}
+          <aside className="card-accent card-accent-bg rounded-xl sm:rounded-2xl p-4 sm:p-5 lg:p-6 mt-4 sm:mt-0 xl:order-2">
+            <h2 className="text-base sm:text-lg lg:text-xl font-semibold">{dict["projectDetail.summary"]}</h2>
+            <p className="mt-2 sm:mt-3 muted text-sm sm:text-base leading-relaxed">{project.summary}</p>
+            
+            <h3 className="mt-4 sm:mt-5 lg:mt-6 font-semibold text-sm sm:text-base">{dict["projectDetail.technologies"]}</h3>
+            <div className="mt-2 sm:mt-3 flex flex-wrap gap-1.5 sm:gap-2">
               {project.tags.map((t, i) => (
-                <span key={i} className="rounded-full px-3 py-1 text-xs" style={{ background: "rgba(6,182,212,0.12)", color: "var(--accent)" }}>{t}</span>
+                <span 
+                  key={i} 
+                  className="rounded-full px-2.5 sm:px-3 py-1 text-xs sm:text-sm font-medium" 
+                  style={{ background: "rgba(6,182,212,0.12)", color: "var(--accent)" }}
+                >
+                  {t}
+                </span>
               ))}
             </div>
-            <div className="mt-5 sm:mt-6 px-0 sm:px-2">
+            
+            <div className="mt-4 sm:mt-5 lg:mt-6">
               <a
                 href={project.code}
                 target="_blank"
-                className="btn-hover block w-full rounded-lg px-5 sm:px-6 py-3 sm:py-3.5 text-base sm:text-lg font-semibold text-center"
+                rel="noopener noreferrer"
+                className="btn-hover block w-full rounded-lg sm:rounded-xl px-4 sm:px-5 lg:px-6 py-2.5 sm:py-3 lg:py-3.5 text-sm sm:text-base lg:text-lg font-semibold text-center transition-all duration-200"
                 style={{ backgroundColor: "var(--accent)", color: "var(--bg-main)" }}
               >
                 {dict["projectDetail.detailedCode"]}
               </a>
             </div>
           </aside>
+
+          {/* Proje içeriği - mobilde altta */}
+          <div className="xl:col-span-2 xl:order-1">
+            <ProjectCarousel images={project.screenshots} />
+            <article className="mt-3 sm:mt-4 lg:mt-6 leading-relaxed max-w-none">
+              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold break-words">
+                {project.title}
+              </h1>
+            </article>
+          </div>
         </div>
 
+        {/* Detaylı açıklama - markdown içeriği */}
         {longdescContent && (
-          <div className="mt-10 prose prose-slate max-w-none">
-            <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>{longdescContent}</ReactMarkdown>
+          <div className="mt-8 sm:mt-10 lg:mt-12 prose prose-slate prose-sm sm:prose-base lg:prose-lg max-w-none 
+                         prose-headings:break-words prose-p:break-words prose-li:break-words
+                         prose-img:rounded-lg prose-img:shadow-sm
+                         prose-code:text-sm prose-pre:text-sm">
+            <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
+              {longdescContent}
+            </ReactMarkdown>
           </div>
         )}
       </div>

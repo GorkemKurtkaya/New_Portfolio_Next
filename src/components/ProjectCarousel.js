@@ -33,7 +33,7 @@ export default function ProjectCarousel({ images }) {
         <Carousel autoplay dots className="project-carousel">
           {images.map((src, i) => (
             <div key={i}>
-              <div className="relative group w-full h-[160px] sm:h-[220px] md:h-[340px] lg:h-[420px] max-h-[60vh] cursor-pointer" style={{ background: "var(--bg-alt)" }} onClick={() => { setCurrent(i); setPreviewOpen(true); }}>
+              <div className="relative group w-full h-[260px] sm:h-[340px] md:h-[420px] lg:h-[500px] xl:h-[580px] max-h-[65vh] cursor-pointer" style={{ background: "var(--bg-alt)" }} onClick={() => { setCurrent(i); setPreviewOpen(true); }}>
                 <Image
                   src={src}
                   alt={`Project screenshot ${i + 1}`}
@@ -42,6 +42,18 @@ export default function ProjectCarousel({ images }) {
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 900px"
                   priority={i === 0}
                 />
+                
+                {/* Sağ üst köşede preview göz ikonu */}
+                <div className="pointer-events-none absolute top-3 right-3">
+                  <span
+                    className="rounded-full p-2 text-sm opacity-70 transition-opacity group-hover:opacity-90"
+                    style={{ background: "rgba(0,0,0,0.6)", color: "#fff" }}
+                  >
+                    <EyeOutlined />
+                  </span>
+                </div>
+                
+                {/* Desktop hover overlay (ortalanmış) */}
                 <div className="pointer-events-none absolute inset-0 hidden group-hover:flex items-center justify-center">
                   <span
                     className="rounded-md px-3 py-1 text-xs sm:text-sm font-medium opacity-80"
