@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono, Roboto, Oswald } from "next/font/google";
+import { Geist, Geist_Mono, Oswald } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/navbar";
 import "antd/dist/reset.css";
@@ -6,11 +6,7 @@ import Script from "next/script";
 
 
 
-const roboto = Roboto({
-  variable: "--font-roboto",
-  subsets: ["latin"],
-  weight: ["500", "700"],
-});
+
 
 const oswald = Oswald({
   variable: "--font-oswald",
@@ -93,6 +89,9 @@ export const metadata = {
     shortcut: ["/icons/favicon.ico"],
   },
   manifest: "/icons/site.webmanifest",
+};
+
+export const viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: dark)", color: "#0f1724" },
     { media: "(prefers-color-scheme: light)", color: "#ffffff" },
