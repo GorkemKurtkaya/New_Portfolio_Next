@@ -16,44 +16,79 @@ const enProjects = [
   {
     id: 2,
     slug: "proje-2",
-    title: "Project Name 2",
-    summary: "Brief description: problem, solution, technologies",
-    description:
-      "A solution focused on scalable architecture, clean code, and user experience. Integrations and measurable outputs are listed.",
-    longdesc: "",
-    cover: "/globe.svg",
-    screenshots: ["/globe.svg", "/window.svg"],
-    tags: ["React", "API", "PostgreSQL"],
+    title: "ShopStack",
+    summary: "ShopStack is a full-featured e-commerce application with product management, cart and order workflows, user reviews, and a powerful admin panel.",
+    description: "ShopStack delivers end-to-end e-commerce capabilities, including product catalogs, shopping cart and order processing, customer feedback, and a robust administrative interface.",
+    longdescPath: "/projects/shopstack/shopstack.md",
+    cover: "/projects/shopstack/shopstack.png",
+    screenshots: [
+      "/projects/shopstack/shopstackss1.png",
+      "/projects/shopstack/shopstackss2.png",
+      "/projects/shopstack/shopstackss3.png",
+      "/projects/shopstack/shopstackss4.png"
+    ],
+    tags: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "Mongoose",
+      "MongoDB",
+      "JWT",
+      "Multer",
+      "Nodemailer",
+      "Winston",
+      "Ant Design",
+      "Tailwind CSS",
+      "Chart.js",
+      "Redis",
+      "Docker"
+    ],
     live: "#",
-    code: "#",
+    code: "https://github.com/GorkemKurtkaya/shopstack"
   },
   {
     id: 3,
     slug: "proje-3",
-    title: "Project Name 3",
-    summary: "Brief description: problem, solution, technologies",
-    description:
-      "A project enriched with real-time features, caching, and accessibility improvements.",
-    longdesc: "",
-    cover: "/window.svg",
-    screenshots: ["/window.svg"],
-    tags: ["WebSocket", "Redis", "A11y"],
+    title: "IoT System",
+    summary: "This project gathers data from factory IoT sensors via the MQTT protocol, publishes it in real time, and includes user and company management, logging, and security mechanisms.",
+    description: "A comprehensive system enriched with real-time streaming, caching optimizations, and enhanced accessibility features.",
+    longdescPath: "/projects/iot/iot.md",
+    cover: "/projects/iot/iot.png",
+    screenshots: [
+      "/projects/iot/iotss1.png",
+      "/projects/iot/iotss2.png"
+    ],
+    tags: [
+      "CI/CD",
+      "Testing",
+      "Docker"
+    ],
     live: "#",
-    code: "#",
+    code: "https://github.com/GorkemKurtkaya/iot-system"
   },
   {
     id: 4,
     slug: "proje-4",
-    title: "Project Name 4",
-    summary: "Brief description: problem, solution, technologies",
-    description:
-      "An application delivered with production quality through test-driven development and CI/CD.",
-    longdesc: "",
-    cover: "/globe.svg",
-    screenshots: ["/globe.svg"],
-    tags: ["CI/CD", "Testing", "Docker"],
+    title: "BurgerShop",
+    summary: "Customers can place orders online while business owners track them instantly. Modern software architectures ensure both an exceptional user experience and long-term technical sustainability.",
+    description: "A project enhanced with real-time features, caching strategies, and accessibility improvements.",
+    longdescPath: "/projects/burger/burger.md",
+    cover: "/projects/burger/burger.png",
+    screenshots: [
+      "/projects/burger/burgerss1.png",
+      "/projects/burger/burgerss2.png",
+      "/projects/burger/burgerss3.png",
+      "/projects/burger/burgerss4.png"
+    ],
+    tags: [
+      "CI/CD",
+      "Testing",
+      "Docker"
+    ],
     live: "#",
-    code: "#",
+    code: "https://github.com/GorkemKurtkaya/burger-shop"
   },
   {
     id: 5,

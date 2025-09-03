@@ -129,6 +129,7 @@ export default function RootLayout({ children }) {
       </head>
       <body
         className={` ${oswald.className} ${oswald.variable} antialiased font-medium`}
+        suppressHydrationWarning={true}
       >
         <Navbar />
         {children}

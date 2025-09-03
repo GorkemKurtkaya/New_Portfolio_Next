@@ -33,13 +33,13 @@ export default function ProjectCarousel({ images }) {
         <Carousel autoplay dots className="project-carousel">
           {images.map((src, i) => (
             <div key={i}>
-              <div className="relative group w-full h-[260px] sm:h-[340px] md:h-[420px] lg:h-[500px] xl:h-[580px] max-h-[65vh] cursor-pointer" style={{ background: "var(--bg-alt)" }} onClick={() => { setCurrent(i); setPreviewOpen(true); }}>
+                              <div className="relative group w-full h-[260px] sm:h-[320px] md:h-[400px] lg:h-[480px] xl:h-[520px] 2xl:h-[560px] max-h-[65vh] cursor-pointer" style={{ background: "var(--bg-alt)" }} onClick={() => { setCurrent(i); setPreviewOpen(true); }}>
                 <Image
                   src={src}
                   alt={`Project screenshot ${i + 1}`}
                   fill
                   className="object-contain object-center"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 900px"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 75vw, (max-width: 1536px) 60vw, 1200px"
                   priority={i === 0}
                 />
                 

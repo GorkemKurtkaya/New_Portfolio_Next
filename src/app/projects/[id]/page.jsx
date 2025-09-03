@@ -73,25 +73,25 @@ export default function ProjectDetailPage() {
 
   return (
     <main className="section-main">
-      <div className="mx-auto max-w-6xl px-3 sm:px-4 py-6 sm:py-8 md:py-12 lg:py-16">
+      <div className="mx-auto max-w-7xl px-3 sm:px-4 lg:px-6 xl:px-8 xl:max-w-[1500px] py-6 sm:py-8 md:py-12 lg:py-16">
         {/* Geri dönüş linki */}
-        <div className="mb-4 sm:mb-6">
-          <a href="/" className="inline-flex items-center gap-1.5 sm:gap-2 underline text-sm sm:text-base">
+        <div className="mb-3 sm:mb-4 xl:mb-6">
+          <a href="/" className="inline-flex items-center gap-1.5 sm:gap-2 underline text-sm sm:text-base hover:opacity-80 transition-opacity">
             <LeftOutlined className="text-xs sm:text-sm" />
             {dict["projectDetail.back"]}
           </a>
         </div>
 
         {/* Ana grid layout - mobile-first responsive tasarım */}
-        <div className="flex flex-col gap-6 sm:gap-8 xl:grid xl:grid-cols-3 xl:gap-10">
+        <div className="flex flex-col gap-6 sm:gap-8 xl:grid xl:grid-cols-4 xl:gap-6">
           
           {/* Proje bilgileri kartı - mobilde üstte, navbar'dan uzak */}
-          <aside className="card-accent card-accent-bg rounded-xl sm:rounded-2xl p-4 sm:p-5 lg:p-6 mt-4 sm:mt-0 xl:order-2">
-            <h2 className="text-base sm:text-lg lg:text-xl font-semibold">{dict["projectDetail.summary"]}</h2>
-            <p className="mt-2 sm:mt-3 muted text-sm sm:text-base leading-relaxed">{project.summary}</p>
+          <aside className="card-accent card-accent-bg rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-5 mt-4 sm:mt-0 xl:order-2 xl:col-span-1 xl:h-fit">
+            <h2 className="text-base sm:text-lg font-semibold">{dict["projectDetail.summary"]}</h2>
+            <p className="mt-2 muted text-sm sm:text-base leading-relaxed">{project.summary}</p>
             
-            <h3 className="mt-4 sm:mt-5 lg:mt-6 font-semibold text-sm sm:text-base">{dict["projectDetail.technologies"]}</h3>
-            <div className="mt-2 sm:mt-3 flex flex-wrap gap-1.5 sm:gap-2">
+            <h3 className="mt-3 sm:mt-4 font-semibold text-sm sm:text-base">{dict["projectDetail.technologies"]}</h3>
+            <div className="mt-2 flex flex-wrap gap-1.5 sm:gap-2">
               {project.tags.map((t, i) => (
                 <span 
                   key={i} 
@@ -103,12 +103,12 @@ export default function ProjectDetailPage() {
               ))}
             </div>
             
-            <div className="mt-4 sm:mt-5 lg:mt-6">
+            <div className="mt-4 sm:mt-5">
               <a
                 href={project.code}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-hover block w-full rounded-lg sm:rounded-xl px-4 sm:px-5 lg:px-6 py-2.5 sm:py-3 lg:py-3.5 text-sm sm:text-base lg:text-lg font-semibold text-center transition-all duration-200"
+                className="btn-hover block w-full rounded-lg px-4 sm:px-5 py-2.5 sm:py-3 text-sm sm:text-base font-semibold text-center transition-all duration-200"
                 style={{ backgroundColor: "var(--accent)", color: "var(--bg-main)" }}
               >
                 {dict["projectDetail.detailedCode"]}
@@ -117,7 +117,7 @@ export default function ProjectDetailPage() {
           </aside>
 
           {/* Proje içeriği - mobilde altta */}
-          <div className="xl:col-span-2 xl:order-1">
+          <div className="xl:col-span-3 xl:order-1">
             <ProjectCarousel images={project.screenshots} />
             <article className="mt-3 sm:mt-4 lg:mt-6 leading-relaxed max-w-none">
               <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold break-words">
@@ -129,7 +129,7 @@ export default function ProjectDetailPage() {
 
         {/* Detaylı açıklama - markdown içeriği */}
         {longdescContent && (
-          <div className="mt-8 sm:mt-10 lg:mt-12 prose prose-slate prose-sm sm:prose-base lg:prose-lg max-w-none 
+          <div className="mt-8 sm:mt-10 lg:mt-12 prose prose-slate prose-sm sm:prose-base lg:prose-lg max-w-7xl mx-auto
                          prose-headings:break-words prose-p:break-words prose-li:break-words
                          prose-img:rounded-lg prose-img:shadow-sm
                          prose-code:text-sm prose-pre:text-sm">

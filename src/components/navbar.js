@@ -166,13 +166,23 @@ export default function Navbar() {
           </Link>
 
           <button
-            className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-md border"
+            className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-md border transition-all duration-200 hover:bg-opacity-10"
             aria-label="Toggle menu"
             onClick={() => setOpen((v) => !v)}
-            style={{ borderColor: "rgba(0,0,0,0.08)" }}
+            style={{ 
+              borderColor: "rgba(0,0,0,0.08)",
+              backgroundColor: open ? "rgba(255, 111, 97, 0.08)" : "transparent"
+            }}
+            suppressHydrationWarning={true}
           >
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 6h16M4 12h16M4 18h16" stroke="var(--text)" strokeWidth="2" strokeLinecap="round"/>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" suppressHydrationWarning={true}>
+              <path 
+                d={open ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} 
+                stroke="var(--text)" 
+                strokeWidth="2" 
+                strokeLinecap="round"
+                style={{ transition: "all 0.3s ease-in-out" }}
+              />
             </svg>
           </button>
 
@@ -205,20 +215,99 @@ export default function Navbar() {
           </div>
         </div>
         <div 
-          className={`md:hidden border-t nav-mobile absolute left-0 right-0 shadow-lg ${open ? "" : "hidden"}`} 
+          className="md:hidden border-t nav-mobile absolute left-0 right-0 shadow-lg transition-all duration-300 ease-in-out"
           style={{ 
             top: "100%", 
             borderColor: "rgba(0,0,0,0.06)",
             backgroundColor: "var(--bg-main)",
-            zIndex: 100
+            zIndex: 100,
+            transform: open ? "translateY(0) scaleY(1)" : "translateY(-8px) scaleY(0.95)",
+            transformOrigin: "top center",
+            opacity: open ? 1 : 0,
+            visibility: open ? "visible" : "hidden"
           }}
+          suppressHydrationWarning={true}
         >
-          <div className="flex flex-col gap-1 py-3 text-lg">
-            <Link href="/#home" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800" style={{ color: "var(--text)" }} onClick={() => setOpen(false)}>{dict["nav.home"]}</Link>
-            <Link href="/#services" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800" style={{ color: "var(--text)" }} onClick={() => setOpen(false)}>{dict["nav.services"]}</Link>
-            <Link href="/#projects" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800" style={{ color: "var(--text)" }} onClick={() => setOpen(false)}>{dict["nav.projects"]}</Link>
-            <Link href="/#contact" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800" style={{ color: "var(--text)" }} onClick={() => setOpen(false)}>{dict["nav.contact"]}</Link>
-            <div className="flex items-center gap-3 px-4 pt-2 pb-1">
+          <div className="flex flex-col gap-1 py-3 text-lg" suppressHydrationWarning={true}>
+            <Link 
+              href="/#home" 
+              className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200" 
+              style={{ 
+                color: "var(--text)",
+                transform: open ? "translateX(0)" : "translateX(-20px)",
+                opacity: open ? 1 : 0,
+                transitionDelay: open ? "0.1s" : "0s"
+              }} 
+              onClick={() => setOpen(false)}
+              suppressHydrationWarning={true}
+            >
+              {dict["nav.home"]}
+            </Link>
+            <Link 
+              href="/#stack" 
+              className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200" 
+              style={{ 
+                color: "var(--text)",
+                transform: open ? "translateX(0)" : "translateX(-20px)",
+                opacity: open ? 1 : 0,
+                transitionDelay: open ? "0.15s" : "0s"
+              }} 
+              onClick={() => setOpen(false)}
+              suppressHydrationWarning={true}
+            >
+              {dict["nav.stack"]}
+            </Link>
+            <Link 
+              href="/#services" 
+              className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200" 
+              style={{ 
+                color: "var(--text)",
+                transform: open ? "translateX(0)" : "translateX(-20px)",
+                opacity: open ? 1 : 0,
+                transitionDelay: open ? "0.2s" : "0s"
+              }} 
+              onClick={() => setOpen(false)}
+              suppressHydrationWarning={true}
+            >
+              {dict["nav.services"]}
+            </Link>
+            <Link 
+              href="/#projects" 
+              className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200" 
+              style={{ 
+                color: "var(--text)",
+                transform: open ? "translateX(0)" : "translateX(-20px)",
+                opacity: open ? 1 : 0,
+                transitionDelay: open ? "0.25s" : "0s"
+              }} 
+              onClick={() => setOpen(false)}
+              suppressHydrationWarning={true}
+            >
+              {dict["nav.projects"]}
+            </Link>
+            <Link 
+              href="/#contact" 
+              className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200" 
+              style={{ 
+                color: "var(--text)",
+                transform: open ? "translateX(0)" : "translateX(-20px)",
+                opacity: open ? 1 : 0,
+                transitionDelay: open ? "0.3s" : "0s"
+              }} 
+              onClick={() => setOpen(false)}
+              suppressHydrationWarning={true}
+            >
+              {dict["nav.contact"]}
+            </Link>
+            <div 
+              className="flex items-center gap-3 px-4 pt-2 pb-1 transition-all duration-200" 
+              style={{ 
+                transform: open ? "translateX(0)" : "translateX(-20px)",
+                opacity: open ? 1 : 0,
+                transitionDelay: open ? "0.35s" : "0s"
+              }}
+              suppressHydrationWarning={true}
+            >
               <LanguageToggle />
               <ThemeToggle />
             </div>
