@@ -105,8 +105,8 @@ const trProjects = [
   {
     id: 5,
     slug: "proje-5",
-    title: "P2P Exchange",
-    summary: "A modern and secure P2P (Peer-to-Peer) currency trading platform. Users can directly trade between USD, EUR, and TRY, place buy/sell orders, and perform fast transactions through an automatic matching system.",
+    title: "P2P Döviz",
+    summary: "Modern ve güvenli bir P2P (Peer-to-Peer) döviz alım-satım platformu. Kullanıcılar USD, EUR ve TRY arasında doğrudan işlem yapabilir, alış-satış emirleri verebilir ve otomatik eşleşme sistemi ile hızlı işlemler gerçekleştirebilir.",
     description: "",
     longdescPath: "/projects/p2p/p2p.md",
     cover: "/projects/p2p/p2p.png",
@@ -121,22 +121,17 @@ const trProjects = [
       "JSON"
     ],
     live: "#",
-    code: "https://github.com/GorkemKurtkaya/Banker_goko"
+    code: "https://github.com/GorkemKurtkaya/Banker_goko",
   },
   {
     id: 6,
     slug: "proje-6",
     title: "GorkeMarkt",
-    summary: "This is an e-commerce project developed for the Patika.dev/Newmind AI Fullstack Bootcamp. The project consists of three main components: backend, frontend, and microservices. Each component is built using modern technologies and is fully Docker-compatible for easy deployment.",
+    summary: "Bu Proje Patika.dev/Newmind AI Fullstack Bootcamp için hazırlamış olduğum e-ticaret projesidir. Proje, backend, frontend ve microservices olmak üzere üç ana bileşenden oluşmaktadır. Her bir bileşen, modern teknolojiler kullanılarak geliştirilmiştir ve Docker ile kolayca çalıştırılabilir durumdadır.",
     description: "",
     longdescPath: "/projects/gorkemarkt/gorkemarkt.md",
     cover: "/projects/gorkemarkt/gorkemarkt.png",
-    screenshots: [
-      "/projects/gorkemarkt/gorkemarkt.png",
-      "/projects/gorkemarkt/gorkemarktss1.png",
-      "/projects/gorkemarkt/gorkemarktss2.png",
-      "/projects/gorkemarkt/gorkemarktss3.png"
-    ],
+    screenshots: ["/projects/gorkemarkt/gorkemarkt.png", "/projects/gorkemarkt/gorkemarktss1.png", "/projects/gorkemarkt/gorkemarktss2.png", "/projects/gorkemarkt/gorkemarktss3.png"],
     tags: [
       "Node.js",
       "Express",
@@ -156,8 +151,8 @@ const trProjects = [
       "Microservices"
     ],
     live: "#",
-    code: "https://github.com/GorkemKurtkaya/Final_Case_Newmind_E-Commerce"
-  }  
+    code: "https://github.com/GorkemKurtkaya/Final_Case_Newmind_E-Commerce",
+  }
 ];
 
 export default trProjects;

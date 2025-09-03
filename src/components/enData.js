@@ -66,7 +66,7 @@ const enProjects = [
       "Docker"
     ],
     live: "#",
-    code: "https://github.com/GorkemKurtkaya/iot-system"
+    code: "https://github.com/GorkemKurtkaya/IoT-Sensor-Monitor"
   },
   {
     id: 4,
@@ -88,46 +88,64 @@ const enProjects = [
       "Docker"
     ],
     live: "#",
-    code: "https://github.com/GorkemKurtkaya/burger-shop"
+    code: "https://github.com/GorkemKurtkaya/BurgerShop-Fullstack"
   },
   {
     id: 5,
     slug: "proje-5",
-    title: "Project Name 5",
-    summary: "Brief description: problem, solution, technologies",
-    description: "SEO, performance, and accessibility-focused front-end project.",
-    longdesc: "",
-    cover: "/window.svg",
-    screenshots: ["/window.svg"],
-    tags: ["SEO", "Lighthouse", "PWA"],
+    title: "P2P Exchange",
+    summary: "A modern and secure P2P (Peer-to-Peer) currency trading platform. Users can directly trade between USD, EUR, and TRY, place buy/sell orders, and perform fast transactions through an automatic matching system.",
+    description: "",
+    longdescPath: "/projects/p2p/p2p.md",
+    cover: "/projects/p2p/p2p.png",
+    screenshots: ["/projects/p2p/p2p.png"],
+    tags: [
+      "Node.js",
+      "Express.js",
+      "Supabase",
+      "PostgreSQL",
+      "JWT",
+      "RESTful API",
+      "JSON"
+    ],
     live: "#",
-    code: "#",
+    code: "https://github.com/GorkemKurtkaya/Banker_goko"
   },
   {
     id: 6,
     slug: "proje-6",
-    title: "Project Name 6",
-    summary: "Brief description: problem, solution, technologies",
-    description: "Corporate interface based on design system and component library.",
-    longdesc: "",
-    cover: "/globe.svg",
-    screenshots: ["/globe.svg"],
-    tags: ["Design System", "Storybook", "Monorepo"],
+    title: "GorkeMarkt",
+    summary: "This is an e-commerce project developed for the Patika.dev/Newmind AI Fullstack Bootcamp. The project consists of three main components: backend, frontend, and microservices. Each component is built using modern technologies and is fully Docker-compatible for easy deployment.",
+    description: "",
+    longdescPath: "/projects/gorkemarkt/gorkemarkt.md",
+    cover: "/projects/gorkemarkt/gorkemarkt.png",
+    screenshots: [
+      "/projects/gorkemarkt/gorkemarkt.png",
+      "/projects/gorkemarkt/gorkemarktss1.png",
+      "/projects/gorkemarkt/gorkemarktss2.png",
+      "/projects/gorkemarkt/gorkemarktss3.png"
+    ],
+    tags: [
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "JWT",
+      "Cloudinary",
+      "Redis",
+      "Kafka",
+      "Zookeeper",
+      "Elasticsearch",
+      "Docker",
+      "Docker Compose",
+      "React",
+      "Vite",
+      "Ant Design",
+      "Axios",
+      "Microservices"
+    ],
     live: "#",
-    code: "#",
-  },
-  {
-    id: 7,
-    slug: "proje-7",
-    title: "Project Name 7",
-    summary: "Brief description: problem, solution, technologies",
-    description: "Corporate interface based on design system and component library.",
-    cover: "/globe.svg",
-    screenshots: ["/globe.svg"],
-    tags: ["Design System", "Storybook", "Monorepo"],
-    live: "#",
-    code: "#",
-  },
+    code: "https://github.com/GorkemKurtkaya/Final_Case_Newmind_E-Commerce"
+  }  
 ];
 
 export default enProjects;
