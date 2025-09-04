@@ -61,9 +61,19 @@ const enProjects = [
       "/projects/iot/iotss2.png"
     ],
     tags: [
-      "CI/CD",
-      "Testing",
-      "Docker"
+      "NestJS",
+      "Node.js",
+      "Supabase",
+      "PostgreSQL",
+      "EMQX Cloud",
+      "MQTT",
+      "Socket.io",
+      "JWT",
+      "Docker",
+      "Google Cloud Run",
+      "Next.js",
+      "WebSocket",
+      "TLS"
     ],
     live: "#",
     code: "https://github.com/GorkemKurtkaya/IoT-Sensor-Monitor"
