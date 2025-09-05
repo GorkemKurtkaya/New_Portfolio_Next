@@ -45,7 +45,9 @@ useEffect(() => {
     
     const width = wrapperRef.current ? wrapperRef.current.clientWidth : window.innerWidth;
     let desired;
-    if (width < 320) {
+    if ( width < 285){
+      desired = 75;
+    }else if (width < 320) {
       desired = 100;
     } else if (width < 480) {
       desired = 220;
