@@ -30,9 +30,9 @@
 
   "services.title": "Hizmetler",
   "services.frontend.title": "Frontend Geliştirme",
-  "services.frontend.description": "React.js ile frontend geliştirme konusunda deneyime sahibim, dinamik ve responsive kullanıcı arayüzleri oluşturuyorum. HTML5, CSS3 ve JavaScript (TypeScript) konularında yetenekliyim, cihazlar ve tarayıcılar arasında uyumluluk sağlıyorum. Redux ve React Context gibi state yönetim araçlarıyla çalıştım ve verimli veri işleme için API'ları entegre ettim. Odak noktam, uygulama performansını artıran temiz, sürdürülebilir ve kullanıcı dostu arayüzler oluşturmak.",
+  "services.frontend.description": "React.js ve Next.js ile modern, responsive ve kullanıcı dostu arayüzler geliştiriyorum. HTML5, CSS3, JavaScript ve TypeScript konusunda yetkinim, tüm cihazlarda sorunsuz çalışan arayüzler tasarlıyorum. Redux ve Context API gibi state management araçlarını kullanıyor, API entegrasyonları ile verilerin akıcı şekilde yönetilmesini sağlıyorum. Ayrıca Tailwind CSS ve Ant Design ile temiz ve şık UI tasarımları sunuyorum.",
   "services.backend.title": "Backend Geliştirme",
-  "services.backend.description": "Backend geliştirme konusunda uzmanlaşmışım, Node.js, Django ve Express gibi teknolojiler kullanarak sağlam ve ölçeklenebilir uygulamalar oluşturuyorum. RESTful API'lar tasarlama, MongoDB ve PostgreSQL gibi veritabanlarını yönetme ve Redis ve Kafka ile önbellekleme ve mesaj kuyrukları uygulama konularında deneyime sahibim. Odak noktam, frontend bileşenleriyle sorunsuz entegre olan ve kullanıcı büyümesiyle verimli şekilde ölçeklenen yüksek performanslı, güvenli ve sürdürülebilir sistemler oluşturmak.",
+  "services.backend.description": "I develop modern, responsive, and user-friendly interfaces with React.js and Next.js. I’m skilled in HTML5, CSS3, JavaScript, and TypeScript, creating cross-platform experiences that work seamlessly on all devices. I use state management tools like Redux and Context API, integrate APIs for smooth data flow, and design clean UIs with Tailwind CSS and Ant Design to deliver high-quality user experiences.",
 
   "projects.title": "Projeler",
   "projects.viewDetails": "Detayları görüntüle",

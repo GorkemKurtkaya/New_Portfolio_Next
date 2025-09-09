@@ -30,9 +30,9 @@
 
   "services.title": "Services",
   "services.frontend.title": "Frontend Development",
-  "services.frontend.description": "I have experience in frontend development with React.js, creating dynamic and responsive user interfaces. I'm skilled in HTML5, CSS3, and JavaScript (TypeScript), ensuring compatibility across devices and browsers. I've worked with state management tools like Redux and React Context and integrated APIs for efficient data handling. My focus is on building clean, maintainable, and user-friendly interfaces that boost application performance.",
+  "services.frontend.description": "I develop modern, responsive, and user-friendly interfaces with React.js and Next.js. I’m skilled in HTML5, CSS3, JavaScript, and TypeScript, creating cross-platform experiences that work seamlessly on all devices. I use state management tools like Redux and Context API, integrate APIs for smooth data flow, and design clean UIs with Tailwind CSS and Ant Design to deliver high-quality user experiences.",
   "services.backend.title": "Backend Development",
-  "services.backend.description": "I specialize in backend development, using technologies like Node.js, Django, and Express to build robust and scalable applications. I have experience in designing RESTful APIs, managing databases such as MongoDB and PostgreSQL, and implementing caching and message queues with Redis and Kafka. My focus is on creating high-performance, secure, and maintainable systems that integrate seamlessly with frontend components and scale efficiently with user growth.",
+  "services.backend.description": "I specialize in building scalable and secure backend systems with Node.js and NestJS. My experience includes designing RESTful APIs, managing PostgreSQL and MongoDB databases, and working with Redis, Kafka, and RabbitMQ for real-time data and message queues. I also develop microservices architectures, containerize applications with Docker, and deploy to cloud platforms like GCP and AWS, ensuring high performance and reliability.",
 
   "projects.title": "Projects",
   "projects.viewDetails": "View details",
