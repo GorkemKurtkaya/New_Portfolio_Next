@@ -32,7 +32,7 @@
   "services.frontend.title": "Frontend Geliştirme",
   "services.frontend.description": "React.js ve Next.js ile modern, responsive ve kullanıcı dostu arayüzler geliştiriyorum. HTML5, CSS3, JavaScript ve TypeScript konusunda yetkinim, tüm cihazlarda sorunsuz çalışan arayüzler tasarlıyorum. Redux ve Context API gibi state management araçlarını kullanıyor, API entegrasyonları ile verilerin akıcı şekilde yönetilmesini sağlıyorum. Ayrıca Tailwind CSS ve Ant Design ile temiz ve şık UI tasarımları sunuyorum.",
   "services.backend.title": "Backend Geliştirme",
-  "services.backend.description": "I develop modern, responsive, and user-friendly interfaces with React.js and Next.js. I’m skilled in HTML5, CSS3, JavaScript, and TypeScript, creating cross-platform experiences that work seamlessly on all devices. I use state management tools like Redux and Context API, integrate APIs for smooth data flow, and design clean UIs with Tailwind CSS and Ant Design to deliver high-quality user experiences.",
+  "services.backend.description": "Node.js ve NestJS ile ölçeklenebilir ve güvenli backend sistemleri geliştiriyorum. Deneyimlerim arasında RESTful API tasarlamak, PostgreSQL ve MongoDB veritabanlarını yönetmek ve gerçek zamanlı veri/messaging için Redis, Kafka ve RabbitMQ kullanmak yer alıyor. Ayrıca mikroservis mimarileri geliştiriyor, uygulamaları Docker ile containerize ediyor ve GCP/AWS üzerinde dağıtarak yüksek performans ve güvenilirlik sağlıyorum.",
 
   "projects.title": "Projeler",
   "projects.viewDetails": "Detayları görüntüle",
